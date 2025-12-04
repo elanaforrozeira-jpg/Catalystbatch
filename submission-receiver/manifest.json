@@ -1,0 +1,17 @@
+{
+  "name": "Ruhvaan",
+  "short_name": "Ruhvaan",
+  "description": "Professional JEE Test App",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff6b6b",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE5MiA5Nkw5NiAxOTIgNCA5NkgxOTJaIiBmaWxsPSIjRkY2QjZCIi8+PHRleHQgeD0iOTYiIHk9IjExNSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjYwIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VEVTVDwvdGV4dD48L3N2Zz4=",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
