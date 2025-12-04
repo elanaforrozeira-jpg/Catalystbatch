@@ -237,7 +237,7 @@
         <!-- Test Screen -->
         <div id="testScreen" class="test-screen hidden">
             <div class="logo">🔥 JEE MAIN CATALYST SERIES</div>
-            <div class="logo">   Sequence & Series TEST-04
+            <div class="logo">   Sequence & Series TEST-04</div>
             <div class="timer" id="timer">45:00</div>
             <div class="progress">
                 <div class="progress-bar" id="progressBar" style="width: 0%"></div>
