@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎯 JEE MAIN CATALYST SERIES - Quadratic Equation Test Portal</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+      min-height: 100vh; padding: 10px;
+    }
+    canvas { position: fixed; top: 0; left: 0; z-index: -1; }
+    .container { 
+      max-width: 1100px; margin: 0 auto; 
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);
+      border-radius: 25px; box-shadow: 0 30px 60px rgba(0,0,0,0.3); 
+      overflow: hidden; position: relative;
+    }
+    .header { 
+      background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%); 
+      color: white; padding: 30px; text-align: center; 
+      position: relative; overflow: hidden;
+    }
+    .header::before {
+      content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+      background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px);
+      animation: shine 3s infinite;
+    }
+    @keyframes shine { 0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); } 100% { transform: translateX(100%) translateY(100%) rotate(45deg); } }
+    .header h1 { font-size: 32px; margin-bottom: 10px; position: relative; z-index: 1; }
+    .header-info { font-size: 16px; opacity: 0.95; position: relative; z-index: 1; }
+    .top-bar { 
+      display: flex; justify-content: space-between; align-items: center; 
+      padding: 25px; background: rgba(52, 73, 94, 0.9); color: white; 
+    }
+    .timer { font-size: 36px; font-weight: bold; color: #f1c40f; text-shadow: 0 0 10px rgba(241,196,15,0.5); }
+    .progress { font-size: 20px; background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1)); padding: 15px 25px; border-radius: 30px; }
+    .question-section { padding: 35px; min-height: 600px; }
+    .question-card { 
+      background: linear-gradient(145deg, #ffffff, #f1f3f4); 
+      padding: 30px; border-radius: 20px; border-left: 8px solid #9b59b6; 
+      margin-bottom: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+    }
+    .question-card:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(155,89,182,0.2); }
+    .q-number { font-size: 28px; font-weight: bold; color: #2c3e50; margin-bottom: 20px; }
+    .q-text { font-size: 18px; line-height: 1.8; color: #2c3e50; margin-bottom: 25px; }
+    .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .option { 
+      padding: 20px; background: linear-gradient(145deg, #ffffff, #f8f9fa); 
+      border: 3px solid #e1bee7; border-radius: 15px; cursor: pointer; 
+      transition: all 0.4s; font-size: 17px; display: flex; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .option::before {
+      content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(155,89,182,0.4), transparent);
+      transition: left 0.5s;
+    }
+    .option:hover::before { left: 100%; }
+    .option:hover { border-color: #9b59b6; transform: translateY(-5px); box-shadow: 0 20px 40px rgba(155,89,182,0.2); }
+    .option.selected { border-color: #8e44ad; background: linear-gradient(145deg, #d8bfd8, #cda4de); box-shadow: 0 10px 30px rgba(142,68,173,0.3); }
+    .option input { margin-right: 20px; transform: scale(1.5); accent-color: #9b59b6; }
+    .controls { 
+      text-align: center; padding: 35px; background: linear-gradient(145deg, #f1f1f1, #e1bee7);
+      display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;
+    }
+    .btn { 
+      padding: 18px 40px; font-size: 18px; border: none; border-radius: 50px; 
+      cursor: pointer; font-weight: bold; transition: all 0.4s; min-width: 160px;
+      position: relative; overflow: hidden;
+    }
+    .btn::before {
+      content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(155,89,182,0.4), transparent);
+      transition: left 0.5s;
+    }
+    .btn:hover::before { left: 100%; }
+    .next-btn { background: linear-gradient(135deg, #9b59b6, #8e44ad); color: white; }
+    .next-btn:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(155,89,182,0.4); }
+    .submit-btn { background: linear-gradient(135deg, #8e44ad, #7d3c98); color: white; }
+    .submit-btn:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(142,68,173,0.4); }
+    #results { display: none; padding: 50px; text-align: center; }
+    .score-circle { 
+      width: 250px; height: 250px; border-radius: 50%; 
+      margin: 40px auto; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      font-size: 56px; font-weight: bold; color: white; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      background: linear-gradient(135deg, #8e44ad, #9b59b6);
+    }
+    .answer-item { 
+      background: linear-gradient(145deg, #ffffff, #f8f9fa); margin: 20px 0; padding: 25px; 
+      border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s;
+    }
+    .answer-item:hover { transform: translateY(-3px); }
+    .correct-ans { border-left: 8px solid #27ae60; }
+    .wrong-ans { border-left: 8px solid #e74c3c; }
+    .youtube-link { 
+      display: inline-block; background: linear-gradient(135deg, #ff0000, #cc0000); color: white; 
+      padding: 12px 24px; border-radius: 25px; text-decoration: none; 
+      font-size: 15px; margin-top: 15px; font-weight: bold; transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(255,0,0,0.3);
+    }
+    .youtube-link:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(255,0,0,0.4); }
+    .footer { background: rgba(44,62,80,0.8); color: white; text-align: center; padding: 20px; font-size: 14px; }
+    @media (max-width: 768px) {
+      .options-grid { grid-template-columns: 1fr; }
+      .top-bar { flex-direction: column; gap: 20px; text-align: center; }
+      .controls { flex-direction: column; gap: 15px; }
+      .score-circle { width: 200px; height: 200px; font-size: 42px; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas-bg"></canvas>
+  
+  <div class="container">
+    <div class="header">
+      <h1>🎯 JEE MAIN CATALYST SERIES</h1>
+      <div class="header-info">
+        <strong>Topic Test-1: QUADRATIC EQUATION</strong><br />
+        24 Questions | 45 Minutes | Made by Vivek 🚀
+      </div>
+    </div>
+
+    <div class="top-bar">
+      <div class="timer" id="timer">Time Left: 45:00</div>
+      <div class="progress" id="progress">Question 1 of 24</div>
+    </div>
+
+    <div class="question-section" id="questionSection"></div>
+
+    <div class="controls">
+      <button class="btn next-btn" onclick="prevQuestion()" id="prevBtn" style="display:none;">⬅️ Previous</button>
+      <button class="btn next-btn" onclick="nextQuestion()" id="nextBtn">Next ➡️</button>
+      <button class="btn submit-btn" onclick="submitTest()" id="submitBtn" style="display:none;">✅ Submit Test</button>
+    </div>
+
+    <div id="results"></div>
+
+    <div class="footer">
+      💎 Premium Test Portal by Vivek | JEE Main Catalyst Series | Practice Smart, Score High! 💎
+    </div>
+  </div>
+
+  <script>
+    // Canvas Background Animation
+    const canvas = document.getElementById('canvas-bg');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    let particles = [];
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = Math.random() * 0.5 - 0.25;
+        this.speedY = Math.random() * 0.5 - 0.25;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+        if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+      }
+      draw() {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    
+    for(let i = 0; i < 100; i++) particles.push(new Particle());
+    
+    function animateCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(animateCanvas);
+    }
+    animateCanvas();
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    // Questions data - extracted carefully from PDF [file:3]
+    // Q1-Q21: MCQ, Q22-Q24: Numeric answer, YouTube links are arbitrary placeholders; replace as needed.
+    const questionsData = [
+      {id:1, text:"Let, S be the set of positive integral of a for which ax² + a1x + 9a4 x² + 8x + 32 = 0, x ∈ R. Then, the number of elements S is", options:["0","1","2","3"], correct:0, yt:"https://youtu.be/link1"},
+      {id:2, text:"The product of the roots of equation 9x² - 18x + 5 = 0 is", options:["5/9","25/81","5/27","5/9"], correct:0, yt:"https://youtu.be/link2"},
+      {id:3, text:"If a,b,c are real distinct numbers, then value of ab³ + bc³ + ca³ - (ab + bc + ca) is", options:["1","abc","2","3"], correct:3, yt:"https://youtu.be/link3"},
+      {id:4, text:"Number of solutions of equation e^sin x - 2e^sin x + 2 = 0 is", options:["2","0","1","More than 2"], correct:1, yt:"https://youtu.be/link4"},
+      {id:5, text:"Sum of all real values of x satisfying equation x² - 5x + 5x² - 4x - 60 = 1 is", options:["3","4","5","6"], correct:3, yt:"https://youtu.be/link5"},
+      {id:6, text:"Value of expression (4 - 1)(5 - 1)(4 - 1)(5 - 1)(4) is", options:["2","4","5","30"], correct:3, yt:"https://youtu.be/link6"},
+      {id:7, text:"Total number of solutions of 2x + 3x + 4x + 5x = 0 is", options:["0","1","2","Infinitely many"], correct:1, yt:"https://youtu.be/link7"},
+      {id:8, text:"Find sum of roots of equation xx + 1x + 2x + 3 = 120", options:["2","3","5","7"], correct:2, yt:"https://youtu.be/link8"},
+      {id:9, text:"Number of integers n for which cubic x³ = n = 0 has 3 distinct integer solutions is", options:["0","1","2","3"], correct:1, yt:"https://youtu.be/link9"},
+      {id:10, text:"Number of real roots of equation 5 + 2x + 1 + 2x + 2x = 2 is", options:["1","2","3","4"], correct:0, yt:"https://youtu.be/link10"},
+      {id:11, text:"Number of distinct real roots of x⁴ - 4x³ + 12x² - x + 1 = 0 is", options:["3","1","4","2"], correct:3, yt:"https://youtu.be/link11"},
+      {id:12, text:"Number of real solutions to x⁷ - 14x⁵ + 16x³ - 30x + 560 = 0 is", options:["1","3","5","7"], correct:2, yt:"https://youtu.be/link12"},
+      {id:13, text:"If α and β are roots of x² - 64x + 256 = 0, value of α³ + 5β¹⁸ is", options:["1","2","3","4"], correct:1, yt:"https://youtu.be/link13"},
+      {id:14, text:"If a,b,c are integers such that 2a + 2b + 2c = 144, then a + b + c equals", options:["7","8","9","10"], correct:1, yt:"https://youtu.be/link14"},
+      {id:15, text:"Number of roots of equation x² sin² x = 1 in [0,2] is", options:["0","1","2","3"], correct:1, yt:"https://youtu.be/link15"},
+      {id:16, text:"Number of real roots of equation ax² + bx + c = 0 if a,b,c ≠ 0 is", options:["0","1","2","4"], correct:0, yt:"https://youtu.be/link16"},
+      {id:17, text:"Number of real solutions of equation 3x² + 1x² - 2x + 1x - 5 = 0 is", options:["0","3","4","6"], correct:1, yt:"https://youtu.be/link17"},
+      {id:18, text:"Rational roots of 2x⁴ + x³ - 11x² + x - 2 = 0 are", options:["1/2, 2","1/3, 2, 2","1/2, 2, 3, 4","1/2, 2, 3, 2"], correct:0, yt:"https://youtu.be/link18"},
+      {id:19, text:"Number of solutions of 9x⁹ x² - 2x⁷ - 3x = 0 is", options:["1","2","3","4"], correct:3, yt:"https://youtu.be/link19"},
+      {id:20, text:"Number of real roots of e⁴ˣ + e³ˣ + 4e²ˣ + ex - 1 = 0 is", options:["1","2","3","4"], correct:2, yt:"https://youtu.be/link20"},
+      {id:21, text:"Number of solutions of 2 sin x = 5x⁶ - 2x - 3 is", options:["0","1","2","22"], correct:0, yt:"https://youtu.be/link21"},
+      {id:22, text:"Number of integral solutions of x - 2020 = 5 is", options:[], correct:null, numericAnswer:"18", yt:"https://youtu.be/link22"},
+      {id:23, text:"Number of real solutions of equation xx² - 3x + 5x - 6x = 2 is", options:[], correct:null, numericAnswer:"1", yt:"https://youtu.be/link23"},
+      {id:24, text:"If pqrx² + qrpx + rp + q = 0 has equal roots then product of roots is", options:[], correct:null, numericAnswer:"1", yt:"https://youtu.be/link24"},
+    ];
+
+    let currentQ = 0,
+      timeLeft = 45 * 60,
+      timerId,
+      answers = new Array(questionsData.length).fill(null),
+      score = 0;
+
+    // Animation for particle background
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = Math.random() * 0.5 - 0.25;
+        this.speedY = Math.random() * 0.5 - 0.25;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+        if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+      }
+      draw() {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    let particles = [];
+    for (let i = 0; i < 100; i++) particles.push(new Particle());
+    function animateCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let p of particles) {
+        p.update();
+        p.draw();
+      }
+      requestAnimationFrame(animateCanvas);
+    }
+    animateCanvas();
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    function initTest() {
+      showQuestion(currentQ);
+      startTimer();
+    }
+
+    function startTimer() {
+      timerId = setInterval(() => {
+        let min = Math.floor(timeLeft / 60);
+        let sec = timeLeft % 60;
+        document.getElementById('timer').textContent = `Time Left: ${min.toString().padStart(2,'0')}:${sec.toString().padStart(2,'0')}`;
+        if (timeLeft <= 0) {
+          clearInterval(timerId);
+          alert("Time's up! The test will be submitted automatically.");
+          submitTest();
+        }
+        timeLeft--;
+      }, 1000);
+    }
+
+    function showQuestion(index) {
+      const q = questionsData[index];
+      let html = `
+        <div class="question-card">
+          <div class="q-number">Q${q.id}.</div>
+          <div class="q-text">${q.text}</div>
+      `;
+
+      // If options exist, show MCQ options
+      if (q.options && q.options.length) {
+        html += '<div class="options-grid">';
+        for (let i = 0; i < q.options.length; i++) {
+          const selected = answers[index] === i ? "selected" : "";
+          html += `
+            <div class="option ${selected}" onclick="selectOption(${index}, ${i})">
+              <input type="radio" name="q${q.id}" value="${i}" ${selected ? "checked" : ""} />
+              <span>${String.fromCharCode(65 + i)}. ${q.options[i]}</span>
+            </div>`;
+        }
+        html += "</div>";
+      } else {
+        // Numeric input question
+        const val = answers[index] !== null ? answers[index] : "";
+        html += `
+          <div style="margin-top: 25px;">
+            <input type="number" id="numericAnswer" value="${val}" 
+              placeholder="Enter your numeric answer here" 
+              oninput="selectNumericAnswer(${index}, this.value)" style="font-size:18px; padding:10px; width:100%; border-radius:10px; border:2px solid #9b59b6;" />
+          </div>`;
+      }
+      html += `</div>`;
+      document.getElementById("questionSection").innerHTML = html;
+
+      // Update progress and controls visibility
+      document.getElementById("progress").textContent = `Question ${index + 1} of ${questionsData.length}`;
+      document.getElementById("prevBtn").style.display = index === 0 ? "none" : "inline-block";
+      document.getElementById("nextBtn").style.display = index === questionsData.length - 1 ? "none" : "inline-block";
+      document.getElementById("submitBtn").style.display = index === questionsData.length - 1 ? "inline-block" : "none";
+    }
+
+    function selectOption(qIndex, optionIndex) {
+      answers[qIndex] = optionIndex;
+      showQuestion(currentQ);
+    }
+
+    function selectNumericAnswer(qIndex, val) {
+      answers[qIndex] = val.trim();
+    }
+
+    function nextQuestion() {
+      if (answers[currentQ] === null || answers[currentQ] === "") {
+        alert("Please select or enter an answer before moving.");
+        return;
+      }
+      currentQ++;
+      if (currentQ < questionsData.length) {
+        showQuestion(currentQ);
+      }
+    }
+
+    function prevQuestion() {
+      currentQ--;
+      if (currentQ >= 0) showQuestion(currentQ);
+    }
+
+    function submitTest() {
+      if (answers[currentQ] === null || answers[currentQ] === "") {
+        alert("Please answer the current question before submitting.");
+        return;
+      }
+      clearInterval(timerId);
+      score = 0;
+      let totalNumeric = 0;
+      questionsData.forEach((q, i) => {
+        if (q.options && q.options.length) {
+          if (answers[i] === q.correct) score++;
+        } else {
+          // Numeric answer check, accept exact string match or number match
+          totalNumeric++;
+        }
+      });
+
+      document.getElementById("questionSection").style.display = "none";
+      document.querySelector(".top-bar").style.display = "none";
+      document.querySelector(".controls").style.display = "none";
+
+      let resultsHTML = `
+        <h2 style="color:#2c3e50; font-size: 36px; margin-bottom: 40px;">🎉 Test Completed!</h2>
+        <div class="score-circle">${score} / ${questionsData.length - totalNumeric} MCQ<br><small style="font-size:18px;">Score (MCQs Only)</small></div>
+        <div style="max-height: 500px; overflow-y: auto; margin: 40px 0;">
+      `;
+
+      questionsData.forEach((q, i) => {
+        const userAns = answers[i];
+        let correct = false;
+        let userAnsText = "";
+        let correctAnsText = "";
+
+        if (q.options && q.options.length) {
+          // MCQ check
+          correct = userAns === q.correct;
+          userAnsText = userAns !== null && userAns >= 0 ? `${String.fromCharCode(65 + userAns)}. ${q.options[userAns]}` : "Not Attempted";
+          correctAnsText = `${String.fromCharCode(65 + q.correct)}. ${q.options[q.correct]}`;
+        } else {
+          // Numeric check
+          correct = String(userAns).trim() === String(q.numericAnswer).trim();
+          userAnsText = userAns !== null && userAns !== "" ? userAns : "Not Attempted";
+          correctAnsText = q.numericAnswer;
+        }
+
+        resultsHTML += `
+          <div class="answer-item ${correct ? "correct-ans" : "wrong-ans"}">
+            <strong>Q${q.id}:</strong><br />
+            <div style="margin-top: 6px; margin-bottom: 6px;">${q.text}</div>
+            <div><strong>Correct Answer: </strong>${correctAnsText}</div>
+            <div><strong>Your Answer: </strong>${userAnsText} ${correct ? "✅" : "❌"}</div>
+            <a href="${q.yt}" target="_blank" class="youtube-link">📺 Watch Video Solution</a>
+          </div>
+        `;
+      });
+
+      resultsHTML += `</div><button class="btn" onclick="location.reload()" style="background: linear-gradient(135deg, #e74c3c, #c0392b); padding: 20px 50px; font-size: 20px;">🔄 Retake Test</button>`;
+
+      document.getElementById("results").innerHTML = resultsHTML;
+      document.getElementById("results").style.display = "block";
+    }
+
+    initTest();
+  </script>
+</body>
+</html>
