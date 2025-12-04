@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JEE Main Catalyst Series - Sequence & Series Test Portal (20 Questions)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 30px;
+        }
+        .container {
+            max-width: 960px;
+            width: 95%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .password-screen,
+        .guidelines,
+        .test-screen {
+            padding: 40px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d32f2f;
+            margin-bottom: 20px;
+        }
+        .password-input {
+            width: 300px;
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .btn {
+            background: #1976d2;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 10px;
+        }
+        .btn:hover {
+            background: #1565c0;
+            transform: translateY(-2px);
+        }
+        .timer {
+            background: #d32f2f;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .question {
+            background: #f8f9fa;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #1976d2;
+        }
+        .question h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        .option {
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+        .option:hover,
+        .option.selected {
+            background: #1976d2;
+            color: white;
+            border-color: #1976d2;
+        }
+        .numerical-input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .progress {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #4caf50, #8bc34a);
+            height: 100%;
+            transition: width 0.3s;
+        }
+        .submit-btn {
+            background: #4caf50;
+            font-size: 20px;
+            padding: 20px 60px;
+        }
+        .score-display {
+            background: #4caf50;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        .hidden {
+            display: none !important;
+        }
+        .guidelines-list {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .guidelines-list li {
+            margin: 12px 0;
+            font-size: 16px;
+        }
+        .video-solution {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .video-solution a {
+            color: #d32f2f;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .video-solution a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .options {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Password Screen -->
+        <div id="passwordScreen" class="password-screen">
+            <div class="logo">🔥 JEE MAIN CATALYST SERIES</div>
+            <h2>Topic Test-1: Sequence & Series (20 Questions)</h2>
+            <p style="margin: 30px 0; font-size: 18px; color: #666;">Enter Password to Unlock Test</p>
+            <input type="password" id="passwordInput" class="password-input" placeholder="••••••••" />
+            <br />
+            <button class="btn" onclick="checkPassword()">Unlock Test</button>
+            <p style="margin-top: 20px; font-size: 14px; color: #999;">Contact Instructor for Password</p>
+        </div>
+
+        <!-- Guidelines Screen -->
+        <div id="guidelinesScreen" class="guidelines hidden">
+            <div class="logo">🔥 JEE MAIN CATALYST SERIES</div>
+            <h2>TEST GUIDELINES - JEE MAINS PATTERN</h2>
+            <div class="guidelines-list">
+                <ul>
+                    <li><strong>Total Questions:</strong> 20 Questions</li>
+                    <li><strong>Time Duration:</strong> 45 Minutes</li>
+                    <li><strong>Marking Scheme:</strong> +4 Correct, <strong>-1 Incorrect</strong>, 0 Unattempted</li>
+                    <li><strong>Question Types:</strong> MCQ (Single Correct) & Numerical</li>
+                    <li>Calculator not allowed. Use rough sheet provided.</li>
+                    <li>Do not refresh/reload during test. Test auto-submits at 45 min.</li>
+                </ul>
+            </div>
+            <button class="btn" onclick="startTest()" style="margin-top: 30px;">
+                ✓ I Agree - Start 45 Min Test
+            </button>
+        </div>
+
+        <!-- Test Screen -->
+        <div id="testScreen" class="test-screen hidden">
+            <div class="logo">🔥 JEE MAIN CATALYST SERIES</div>
+            <div class="timer" id="timer">45:00</div>
+            <div class="progress">
+                <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+            </div>
+            <div id="questionsContainer"></div>
+            <button class="btn submit-btn" onclick="submitTest()" id="submitBtn" style="margin-top: 30px;">
+                🚀 Submit Test & See Score
+            </button>
+            <div id="scoreDisplay" class="score-display hidden"></div>
+        </div>
+        <div class="video-solution">
+            <p>Watch detailed video solution here: <a href="https://youtu.be/WNbLo08HlmQ?si=y_H2_1u4XV1hVvQ6" target="_blank" rel="noopener noreferrer">Sequence and Series Video Solutions</a></p>
+        </div>
+    </div>
+
+    <script>
+        const PASSWORD = "Ruhvaan";
+        const TOTAL_TIME = 45 * 60; // 45 min in seconds
+        let timeLeft = TOTAL_TIME;
+        let timerInterval;
+        let currentAnswers = {};
+        let testStarted = false;
+
+        // Questions exactly from the PDF, numbered correctly 1 to 20
+        const questions = [
+            {
+                id: 1,
+                type: "mcq",
+                text: `The sum of first 20 terms of the sequence 0.7, 0.77, 0.777, ... is`,
+                options: [
+                    "(99 + 10^-20)",
+                    "-(179-10^-20)/81",
+                    "(99 - 10^-20)",
+                    "(179 + 10^-20)/81"
+                ],
+                correct: "D",
+            },
+            {
+                id: 2,
+                type: "mcq",
+                text: `If 10^2 + 2(11)^1(10) + 3(11)^2(10) + ... + 10(11)^9(10) = k * 10^{10}, then k is equal to`,
+                options: ["110", "121/10", "441/100", "100"],
+                correct: "D",
+            },
+            {
+                id: 3,
+                type: "mcq",
+                text: `The sum of first 9 terms of the series 1/3 + 1/3^2 + ... is`,
+                options: ["192", "71", "96", "142"],
+                correct: "C",
+            },
+            {
+                id: 4,
+                type: "mcq",
+                text: `If the sum of the first 10 terms of the series 1² + 2 + 3² + 4 + ... is 135, then m is equal to`,
+                options: ["102", "101", "100", "99"],
+                correct: "B",
+            },
+            {
+                id: 5,
+                type: "mcq",
+                text: `Let A be sum of first 20 and B be sum of first 40 terms of series 1²/2² + 3²/4² + ... If B - 2A = 1000, then a is`,
+                options: ["496", "232", "248", "464"],
+                correct: "C",
+            },
+            {
+                id: 6,
+                type: "mcq",
+                text: `Let S = 1 + q + q² + ... + q^n and Tn = 1 + q + 1/2 + ... where q is real number ≠ 1. If T100 = sum involving binomial coefficients, then a is equal to`,
+                options: ["200"],
+                correct: "A",
+            },
+            {
+                id: 7,
+                type: "mcq",
+                text: `The sum of all natural numbers n such that 100 < n < 200 and H.C.F. (91, n) > 1 is`,
+                options: ["3203", "3221", "3121", "3303"],
+                correct: "C",
+            },
+            {
+                id: 8,
+                type: "mcq",
+                text: `Let a₁, a₂, ... be an A.P. with a₁=2. The common difference maximizing a₁₂ × a₄₂ × a₅₂ is`,
+                options: ["3/8", "5", "2/3", "6/5"],
+                correct: "B",
+            },
+            {
+                id: 9,
+                type: "mcq",
+                text: `Let f:R→R such that for all x ∈ R, f(x), 2|x|+1, 3x+3 are in A.P. Minimum value of f(x) is`,
+                options: ["2", "4", "0", "3"],
+                correct: "D",
+            },
+            {
+                id: 10,
+                type: "mcq",
+                text: `Let S be sum of first 9 terms of series {x + k*a} + {x² + (k+2)*a} + ... If S = x - 1, then k is equal to`,
+                options: ["3", "-3", "1", "-5"],
+                correct: "B",
+            },
+            {
+                id: 11,
+                type: "mcq",
+                text: `Minimum value of 2 sin x + 2 cos x is`,
+                options: ["2(1-√2)", "2(1+√2)", "√2-1", "√2+1"],
+                correct: "B",
+            },
+            {
+                id: 12,
+                type: "mcq",
+                text: `The sum of the infinite series 1 + 2/15 + 4/94 + ... is`,
+                options: ["1/2", "7/12", "4/7", "17/22"],
+                correct: "A",
+            },
+            {
+                id: 13,
+                type: "mcq",
+                text: `The sum of the series ∑(n=1 to ∞) (n² + 6n + 10) / (2n + 1)! is equal to`,
+                options: ["e^(e-1) - 10/19/41", "e^(e-1) - 10/41", "e^(e-1) - 19/41", "e^(e-1) - 41/8"],
+                correct: "B",
+            },
+            {
+                id: 14,
+                type: "mcq",
+                text: `Sum of 1/(3² - 1) + 1/(5² - 1) + ... + 1/(201² - 1) is`,
+                options: ["101/404", "25/101", "101/408", "99/400"],
+                correct: "B",
+            },
+            {
+                id: 15,
+                type: "mcq",
+                text: `If 0 < x < 1, then 2x² + 2x³ + 2x⁴ + ... is equal to`,
+                options: ["x + ln(1-x)/(1+x)", "x + ln(1-x)/(1-x)", "ln(1-x)/(1+x)", "ln(1-x)/(1-x)"],
+                correct: "A",
+            },
+            {
+                id: 16,
+                type: "mcq",
+                text: `If a,b,c are positive integers such that abc/(a² + a - 14) is integer and a,b,c are in GP with AM = b/2, then (a-1)/a equals`,
+                options: ["1", "2", "3", "4"],
+                correct: "D",
+            },
+            {
+                id: 17,
+                type: "mcq",
+                text: `AP has all natural numbers. Sum of first 7 terms to sum of first 11 terms ratio is 6:11. 7th term lies between 130 and 140. Then common difference is`,
+                options: ["7", "8", "9", "10"],
+                correct: "C",
+            },
+            {
+                id: 18,
+                type: "mcq",
+                text: `The sides of a right-angled triangle are in AP. Area = 24. Length of smallest side is`,
+                options: ["4", "5", "6", "7"],
+                correct: "C",
+            },
+            {
+                id: 19,
+                type: "mcq",
+                text: `Let X be first 2018 terms of AP 1,6,11,... and Y be first 2018 terms of 9,16,23,... Number of elements in X ∪ Y is`,
+                options: ["3748", "3800", "3900", "4000"],
+                correct: "A",
+            },
+            {
+                id: 20,
+                type: "mcq",
+                text: `Sequence (a_n) defined by a₁=1, a₂=1, aₙ₊₂=2aₙ₊₁ + aₙ. Value of ∑ (n=1 to 47) 21aₙ is`,
+                options: ["7", "14", "21", "28"],
+                correct: "A",
+            }
+        ];
+
+        function checkPassword() {
+            if (document.getElementById('passwordInput').value === PASSWORD) {
+                document.getElementById('passwordScreen').classList.add('hidden');
+                document.getElementById('guidelinesScreen').classList.remove('hidden');
+            } else {
+                alert('❌ Wrong Password! Contact Instructor.');
+                document.getElementById('passwordInput').value = '';
+            }
+        }
+
+        function startTest() {
+            document.getElementById('guidelinesScreen').classList.add('hidden');
+            document.getElementById('testScreen').classList.remove('hidden');
+            loadAllQuestions();
+            startTimer();
+            testStarted = true;
+        }
+
+        function loadAllQuestions() {
+            const container = document.getElementById('questionsContainer');
+            container.innerHTML = '';
+            questions.forEach(q => {
+                const div = document.createElement('div');
+                div.className = 'question';
+                div.id = `q${q.id}`;
+                div.innerHTML = `
+                    <h3>Q${q.id}. ${q.text}</h3>
+                    ${
+                      q.type === 'mcq'
+                        ? `<div class="options">
+                            ${q.options.map(
+                              (opt, i) =>
+                                `<div class="option" onclick="selectOption(${q.id}, '${String.fromCharCode(
+                                  65 + i
+                                )}', this)">${String.fromCharCode(65 + i)}. ${opt}</div>`
+                            ).join('')}
+                          </div>`
+                        : `<input type="number" step="0.01" class="numerical-input" placeholder="Enter answer" oninput="saveNumerical(${q.id}, this.value)" />`
+                    }
+                `;
+                container.appendChild(div);
+            });
+            updateProgress();
+        }
+
+        function selectOption(qid, option, elem) {
+            document.querySelectorAll(`#q${qid} .option`).forEach(opt => opt.classList.remove('selected'));
+            elem.classList.add('selected');
+            currentAnswers[qid] = option;
+            updateProgress();
+        }
+
+        function saveNumerical(qid, value) {
+            if (value.trim()) currentAnswers[qid] = parseFloat(value);
+            else delete currentAnswers[qid];
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const answered = Object.keys(currentAnswers).length;
+            const progress = (answered / questions.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                const min = Math.floor(timeLeft / 60);
+                const sec = timeLeft % 60;
+                document.getElementById('timer').textContent = `${min}:${sec.toString().padStart(2, '0')}`;
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    submitTest();
+                }
+            }, 1000);
+        }
+
+        function submitTest() {
+            clearInterval(timerInterval);
+            let score = 0,
+                correctCount = 0,
+                wrongCount = 0;
+            questions.forEach(q => {
+                if (currentAnswers[q.id]) {
+                    if (
+                        (q.type === 'mcq' &&
+                            currentAnswers[q.id].toUpperCase() === q.correct.toUpperCase()) ||
+                        (q.type === 'numerical' &&
+                            Math.abs(currentAnswers[q.id] - parseFloat(q.correct)) < 0.01)
+                    ) {
+                        score += 4;
+                        correctCount++;
+                    } else {
+                        score -= 1;
+                        wrongCount++;
+                    }
+                }
+            });
+            score = Math.max(0, score);
+            document.getElementById('submitBtn').classList.add('hidden');
+            document.getElementById('scoreDisplay').classList.remove('hidden');
+            document.getElementById('scoreDisplay').innerHTML = `
+                <h3>✅ Test Submitted Successfully!</h3>
+                <p><strong>Score: ${score}/80</strong></p>
+                <p>Attempted: ${Object.keys(currentAnswers).length}/20</p>
+                <p>✅ Correct: ${correctCount} | ❌ Wrong: ${wrongCount}</p>
+                <button class="btn" onclick="location.reload()">📝 Take Test Again</button>
+            `;
+        }
+
+        // Disable right-click and developer shortcuts
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.onkeydown = e => {
+            if (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && e.keyCode === 73)) e.preventDefault();
+        };
+    </script>
+</body>
+</html>
