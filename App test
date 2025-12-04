@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>🎯 JEE Grand Mock Test</title>
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkpFRSBHcmFuZCBNb2NrIFRlc3QiLAogICJzaG9ydF9uYW1lIjogIkpFRV9Nb2NrIiwKICAic3RhcnRfdXJsIjogIi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMxNzI0MzQiLAogICJ0aGVtZV9jb2xvciI6ICIjRkY4MDAwIiwKICAiaWNvbnMiOiBbeyJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sK2Jhc2U2NCxQSE43RjNHREEyQjBCWUFBQUFOSkFBc2lqSUFJQ0FBRUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQOUgCiAgICApIC8vIEphc2NDcmlwdCBTaGVlc3RzIHVwZGF0ZSByaW5nZW4KZG9jdW1lbnQudGl0bGUgPSBgdGltZXIgLXQgSlJFIE1vY2sgVGVzdGBAOwogICAgICAgIH0gKiAxMDAwLCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHN2ZyB4bWxucz0iaHR0cDovL3d3My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTAgMEgxMDBWMTAwSDB6Ii8+PC9wYXRoPjxjaXJjbGUgZmlsbD0iIzFGNjk5QSIgY3g9IjUwIiBjeT0iNTAiIHI9IjQ1Ii8+PC9jaXJjbGU+PHBhdGggZmlsbD0iI0ZGMDAwMCIgZD0iTTUwIDI1TDc1IDUwTDUwIDc1TDI1IDUwWiIgc3Ryb2tlPSIjRkY4MDAwIiBzdHJva2Utd2lkdGg9IjMiLz48L3BhdGg+PC9zdmc+In0sInNpemVzIjogIjE5MngxOTIiLCAidHlwZSI6ICJpbWFnZS9zdmcreG1sK2Jhc2U2NCJ9XSwiY2FwdGlvbiI6ICJEcml2aW5nIHBhcmFib2xpYyBtb3ZlL2RpdmVybWF0aW9uIHZlY3RvcnMgb2YgdGhlIGxpZ2h0IHJheSBmcm9tIGEgZm9jdXM6IDRJLCA0SmoiLCAiZGVzY3JpcHRpb24iOiAiQWJzdHJhY3Qgb2YgR1ZTIEluZm8gQWNjZXNzZWQgYnkgQ3VybHkgSUQ6IDQ5NCJ9" sizes="192x192" type="image/svg+xml">
+    
+    <style>
+        :root {
+            --primary-color: #FF8000; /* Orange - JEE Main/Advanced look */
+            --secondary-color: #172434; /* Dark Blue - Professional/Contrast */
+            --light-bg: #F0F4F8;
+            --card-bg: #FFFFFF;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --timer-color: #007bff;
+        }
+
+        /* Basic Reset & Font Setup */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--secondary-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        /* Header (Top Bar) */
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        #timer {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--primary-color);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Main Content & Section Visibility */
+        main {
+            padding: 15px;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        .section {
+            display: none; /* All sections hidden by default */
+        }
+        #test-section {
+            display: block; /* Show test section initially */
+        }
+
+        /* Question Card Styling */
+        .question-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .question-card h3 {
+            margin-top: 0;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .question-card p.q-text {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .options-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .options-list li {
+            background-color: var(--light-bg);
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s, border 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .options-list li:hover {
+            background-color: #E6EEF4;
+        }
+        
+        .options-list li.selected {
+            border: 2px solid var(--primary-color);
+            background-color: #FFF3E0; /* Light orange background */
+            font-weight: bold;
+        }
+
+        /* Navigation Buttons (Next/Previous) */
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .navigation-buttons button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            width: 48%; /* Adjusting width for alignment */
+            transition: background-color 0.3s;
+        }
+        
+        #prev-btn {
+            background-color: #6c757d; /* Grey */
+            color: white;
+        }
+        #prev-btn:hover {
+            background-color: #5a6268;
+        }
+
+        #next-btn {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        #next-btn:hover {
+            background-color: #e57300;
+        }
+        
+        #submit-test-btn {
+            background-color: var(--success-color);
+            color: white;
+            width: 100%;
+            margin-top: 20px;
+        }
+        #submit-test-btn:hover {
+            background-color: #1e7e34;
+        }
+
+
+        /* Result Section Styling */
+        #result-section {
+            text-align: center;
+        }
+        
+        #result-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        #score-display {
+            font-size: 3em;
+            color: var(--success-color);
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #DDD;
+            font-size: 1.1em;
+        }
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+        
+        .summary-item .value {
+            font-weight: bold;
+        }
+        .correct-val { color: var(--success-color); }
+        .incorrect-val { color: var(--danger-color); }
+        .unattempted-val { color: #6c757d; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎯 JEE Grand Mock Test</h1>
+        <div id="timer">00:00</div>
+    </header>
+
+    <main>
+        <div id="test-section" class="section">
+            <div class="question-card" id="question-container">
+                </div>
+
+            <div class="navigation-buttons">
+                <button id="prev-btn" onclick="navigateQuestion(-1)">⬅️ Previous</button>
+                <button id="next-btn" onclick="navigateQuestion(1)">Next ➡️</button>
+            </div>
+            
+            <button id="submit-test-btn" onclick="confirmSubmission()">FINISH TEST & View Result</button>
+        </div>
+
+        <div id="result-section" class="section">
+            <h2>🎉 Test Result</h2>
+            <div id="result-card">
+                <p>Your Final Score (Net Marks):</p>
+                <div id="score-display">0</div>
+                
+                <div class="summary-item">
+                    <span>Total Correct Answers:</span>
+                    <span id="correct-count" class="value correct-val">0</span>
+                </div>
+                <div class="summary-item">
+                    <span>Total Incorrect Answers:</span>
+                    <span id="incorrect-count" class="value incorrect-val">0</span>
+                </div>
+                <div class="summary-item">
+                    <span>Total Unattempted:</span>
+                    <span id="unattempted-count" class="value unattempted-val">0</span>
+                </div>
+                
+                <p style="margin-top: 25px;">Keep practising! Success is near.</p>
+                <button class="submit-btn" style="background-color: var(--secondary-color);" onclick="window.location.reload()">Start New Test</button>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        // --- 1. Test Data (The core of your App) ---
+        const testQuestions = [
+            {
+                id: 1,
+                subject: "Physics",
+                text: "A proton and an $\\alpha$-particle enter a uniform magnetic field with the same velocity. The ratio of the radii of the circular paths followed by them is:",
+                options: ["1:2", "2:1", "1:4", "4:1"],
+                answer: "1:2" 
+            },
+            {
+                id: 2,
+                subject: "Chemistry",
+                text: "The correct order of $\\text{C-H}$ bond length in $\\text{C}_2\\text{H}_6$, $\\text{C}_2\\text{H}_4$, and $\\text{C}_2\\text{H}_2$ is:",
+                options: ["ethane > ethene > ethyne", "ethene > ethyne > ethane", "ethyne > ethene > ethane", "ethane > ethyne > ethene"],
+                answer: "ethane > ethene > ethyne" 
+            },
+            {
+                id: 3,
+                subject: "Mathematics",
+                text: "If $A$ is a $3 \\times 3$ matrix such that $|A| = 4$, then $|2A^{-1}|$ is equal to:",
+                options: ["1/4", "1/2", "2", "8"],
+                answer: "2"
+            }
+        ];
+
+        // --- 2. State Variables ---
+        let currentQuestionIndex = 0;
+        const userAnswers = new Array(testQuestions.length).fill(null);
+        let timeRemaining = 120; // 120 seconds for this short mock test (2 minutes)
+        let timerInterval;
+
+        // --- 3. Rendering Functions ---
+
+        /** Loads the current question and its options into the HTML. */
+        function loadQuestion() {
+            const q = testQuestions[currentQuestionIndex];
+            const container = document.getElementById('question-container');
+            
+            // Generate HTML for the question card
+            container.innerHTML = `
+                <h3>
+                    <span>Question ${q.id} (${q.subject})</span>
+                    <span>Q. ${currentQuestionIndex + 1} of ${testQuestions.length}</span>
+                </h3>
+                <p class="q-text">${q.text}</p>
+                <ul class="options-list" id="options-list">
+                    ${q.options.map(option => 
+                        `<li onclick="selectOption(this, '${option}')">${option}</li>`
+                    ).join('')}
+                </ul>
+            `;
+            
+            // Highlight saved user answer if it exists
+            const savedAnswer = userAnswers[currentQuestionIndex];
+            if (savedAnswer) {
+                const optionsList = document.getElementById('options-list').children;
+                Array.from(optionsList).forEach(li => {
+                    if (li.innerText.trim() === savedAnswer) {
+                        li.classList.add('selected');
+                    }
+                });
+            }
+
+            // Update navigation button visibility
+            document.getElementById('prev-btn').disabled = currentQuestionIndex === 0;
+            
+            const nextBtn = document.getElementById('next-btn');
+            if (currentQuestionIndex === testQuestions.length - 1) {
+                nextBtn.innerText = "Review & Finish";
+                nextBtn.disabled = true; // Disable Next button on last question
+            } else {
+                nextBtn.innerText = "Next ➡️";
+                nextBtn.disabled = false;
+            }
+        }
+
+        /** Saves the selected answer and updates the UI. */
+        function selectOption(element, answer) {
+            // Remove 'selected' class from all siblings
+            const siblings = element.parentElement.children;
+            Array.from(siblings).forEach(li => li.classList.remove('selected'));
+
+            // Add 'selected' class to the clicked element
+            element.classList.add('selected');
+
+            // Save the answer to the state
+            userAnswers[currentQuestionIndex] = answer;
+        }
+
+        /** Handles navigation between questions. */
+        function navigateQuestion(direction) {
+            if (direction === 1 && currentQuestionIndex < testQuestions.length - 1) {
+                currentQuestionIndex++;
+                loadQuestion();
+            } else if (direction === -1 && currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+            }
+            
+            // Re-enable the submit button if hidden
+            document.getElementById('submit-test-btn').style.display = 'block';
+        }
+        
+        // --- 4. Timer Functions ---
+
+        /** Updates the timer display every second. */
+        function updateTimer() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            
+            document.getElementById('timer').innerText = 
+                `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            
+            if (timeRemaining <= 0) {
+                clearInterval(timerInterval);
+                submitTest(true); // Auto-submit when time runs out
+                alert("Time's up! The test has been automatically submitted.");
+            } else {
+                timeRemaining--;
+            }
+        }
+        
+        /** Starts the timer and the test. */
+        function startTest() {
+            loadQuestion();
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        // --- 5. Submission and Result Functions ---
+
+        /** Confirms submission with the user. */
+        function confirmSubmission() {
+            if (confirm("Are you sure you want to finish the test? You cannot change answers after submission.")) {
+                submitTest(false);
+            }
+        }
+
+        /** Calculates and displays the final score. */
+        function submitTest(isAutoSubmit) {
+            clearInterval(timerInterval);
+            
+            let correctCount = 0;
+            let incorrectCount = 0;
+            let unattemptedCount = 0;
+            
+            // JEE Scoring: +4 for correct, -1 for incorrect, 0 for unattempted
+            let netScore = 0;
+
+            testQuestions.forEach((q, index) => {
+                const userAnswer = userAnswers[index];
+                
+                if (userAnswer === null) {
+                    unattemptedCount++;
+                } else if (userAnswer === q.answer) {
+                    correctCount++;
+                    netScore += 4;
+                } else {
+                    incorrectCount++;
+                    netScore -= 1;
+                }
+            });
+
+            // Update Result Section
+            document.getElementById('correct-count').innerText = correctCount;
+            document.getElementById('incorrect-count').innerText = incorrectCount;
+            document.getElementById('unattempted-count').innerText = unattemptedCount;
+            document.getElementById('score-display').innerText = netScore;
+            
+            // Change view to Result Section
+            document.getElementById('test-section').style.display = 'none';
+            document.getElementById('result-section').style.display = 'block';
+        }
+
+        // Initialize the app on load
+        window.onload = startTest;
+    </script>
+</body>
+</html>
