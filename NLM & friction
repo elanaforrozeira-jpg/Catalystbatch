@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 NLM & FRICTION - Topic Test-4 | JEE MAIN CATALYST SERIES</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            min-height: 100vh; 
+            padding: 15px; 
+        }
+        .container { 
+            max-width: 1000px; margin: 0 auto; 
+            background: white; 
+            border-radius: 20px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2); 
+            overflow: hidden; 
+        }
+        .header { 
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4); 
+            color: white; 
+            padding: 25px; 
+            text-align: center; 
+        }
+        .header h1 { font-size: 28px; margin-bottom: 5px; }
+        .header p { font-size: 16px; opacity: 0.95; }
+        
+        .timer { 
+            background: #ff4444; 
+            color: white; 
+            padding: 15px; 
+            text-align: center; 
+            font-size: 20px; 
+            font-weight: bold; 
+        }
+        
+        .question-container { 
+            padding: 30px; 
+            max-height: 70vh; 
+            overflow-y: auto; 
+        }
+        .question { 
+            background: #f8f9fa; 
+            border: 3px solid #e9ecef; 
+            border-radius: 15px; 
+            padding: 25px; 
+            margin-bottom: 25px; 
+            transition: all 0.3s; 
+        }
+        .question:hover { border-color: #667eea; transform: translateY(-2px); }
+        .q-number { font-size: 24px; font-weight: bold; color: #ff6b6b; margin-bottom: 15px; }
+        .q-text { font-size: 18px; line-height: 1.6; margin-bottom: 20px; color: #333; }
+        .diagram { 
+            background: #fff; 
+            border: 2px dashed #ddd; 
+            border-radius: 10px; 
+            padding: 20px; 
+            margin: 15px 0; 
+            text-align: center; 
+            font-size: 14px; 
+        }
+        .options { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .option { 
+            padding: 15px 20px; 
+            border: 2px solid #ddd; 
+            border-radius: 10px; 
+            cursor: pointer; 
+            transition: all 0.3s; 
+            font-size: 16px; 
+            background: white; 
+        }
+        .option:hover { border-color: #667eea; background: #f0f4ff; }
+        .option.selected { 
+            background: linear-gradient(45deg, #667eea, #764ba2); 
+            color: white; 
+            border-color: #667eea; 
+        }
+        .navigation { 
+            display: flex; 
+            justify-content: space-between; 
+            padding: 20px 30px; 
+            background: #f8f9fa; 
+            border-top: 3px solid #e9ecef; 
+        }
+        .nav-btn { 
+            background: linear-gradient(45deg, #4caf50, #45a049); 
+            color: white; 
+            border: none; 
+            padding: 12px 25px; 
+            border-radius: 25px; 
+            font-size: 16px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: all 0.3s; 
+        }
+        .nav-btn:hover:not(:disabled) { transform: translateY(-2px); }
+        .nav-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .progress { text-align: center; margin: 20px 0; font-size: 18px; color: #666; }
+        
+        .submit-modal { 
+            display: none; 
+            position: fixed; 
+            top: 0; left: 0; 
+            width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.8); 
+            z-index: 1000; 
+        }
+        .modal-content { 
+            position: absolute; 
+            top: 50%; left: 50%; 
+            transform: translate(-50%, -50%); 
+            background: white; 
+            padding: 40px; 
+            border-radius: 20px; 
+            text-align: center; 
+            max-width: 500px; 
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5); 
+        }
+        .score { font-size: 48px; font-weight: bold; color: #4caf50; margin: 20px 0; }
+        
+        @media (max-width: 768px) { 
+            .options { grid-template-columns: 1fr; }
+            .question-container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚛️ NLM & FRICTION</h1>
+            <p><strong>Topic Test-4 | JEE MAIN CATALYST SERIES</strong></p>
+            <p>25 Questions | 45 Minutes</p>
+        </div>
+        
+        <div class="timer" id="timer">
+            ⏱️ <span id="timeLeft">45:00</span>
+        </div>
+        
+        <div class="progress" id="progress">
+            Question <span id="currentQ">1</span> of 25
+        </div>
+        
+        <div class="question-container" id="questionContainer">
+            <!-- Questions will load here -->
+        </div>
+        
+        <div class="navigation">
+            <button class="nav-btn" id="prevBtn" onclick="changeQuestion(-1)">⬅️ Previous</button>
+            <button class="nav-btn" id="nextBtn" onclick="changeQuestion(1)">Next ➡️</button>
+            <button class="nav-btn" style="background: linear-gradient(45deg, #ff6b6b, #ff416c);" onclick="showSubmitModal()">✅ Submit Test</button>
+        </div>
+    </div>
+    
+    <div class="submit-modal" id="submitModal">
+        <div class="modal-content">
+            <h2>🎯 Test Complete!</h2>
+            <div class="score" id="finalScore">0/25</div>
+            <p id="scoreMessage"></p>
+            <button class="nav-btn" onclick="restartTest()" style="margin:10px;">🔄 Restart Test</button>
+            <button class="nav-btn" onclick="showAnswers()" style="background: #ff9800;">📋 Show Answers</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                text: "1. Four blocks of same mass connected by cords are pulled by force F on a smooth horizontal surface, as in figure. The tension T1, T2 and T3 will be",
+                options: [
+                    "(A) T₁ = F/4, T₂ = 3F/2, T₃ = F/4",
+                    "(B) T₁ = F/4, T₂ = F/2, T₃ = F/2",
+                    "(C) T₁ = 3F/4, T₂ = F/2, T₃ = F/4",
+                    "(D) T₁ = 3F/4, T₂ = F/2, T₃ = F/2"
+                ],
+                answer: 2,
+                diagram: "📐 4 blocks in line → F → T₁ → T₂ → T₃ (Smooth surface)"
+            },
+            {
+                text: "2. Two balls A and B weighing 7 N and 9 N are connected by a light cord. The system is suspended from a fixed support by connecting the ball A with another light cord. The ball B is pulled aside by a horizontal force 12 N and equilibrium is established. Angles α and β respectively are",
+                options: [
+                    "(A) 30° and 60°",
+                    "(B) 60° and 30°",
+                    "(C) 37° and 53°",
+                    "(D) 53° and 37°"
+                ],
+                answer: 2,
+                diagram: "🔗 Support → Cord → Ball A(7N) ↔ Cord ↔ Ball B(9N) ← 12N horizontal"
+            },
+            {
+                text: "3. A block is being pulled by a force F on a long frictionless level floor. Magnitude of the force is gradually increases from zero until the block lifts off the floor. Immediately before the block leaves the floor, its acceleration is",
+                options: [
+                    "(A) g cos θ",
+                    "(B) g cot θ",
+                    "(C) g sin θ",
+                    "(D) g tan θ"
+                ],
+                answer: 0,
+                diagram: "📦 Block → F at angle θ with horizontal (Frictionless floor)"
+            },
+            {
+                text: "4. A block B is tied to one end of a uniform rope R as shown. The mass of block is 2 kg and that of rope is 1 kg. A force F = 15 N is applied at angle 37° with vertical. The tension at the midpoint of rope is",
+                options: [
+                    "(A) 1.5 N",
+                    "(B) 2 N",
+                    "(C) 3 N",
+                    "(D) 4.5 N"
+                ],
+                answer: 0
+            },
+            {
+                text: "5. A block resting on a smooth inclined plane is acted upon by a force F as shown. If mass of block is 2 kg and F = 20 N and sin 37° = 3/5, the acceleration of block is",
+                options: [
+                    "(A) 2 m/s²",
+                    "(B) 6 m/s²",
+                    "(C) 8 m/s²",
+                    "(D) zero"
+                ],
+                answer: 0
+            },
+            {
+                text: "6. In a given figure two masses m₁ & m₂ (m₂ > m₁) are at rest in equilibrium position. Find the tension in string AB",
+                options: [
+                    "(A) m₁g",
+                    "(B) m₂g",
+                    "(C) (m₁ + m₂)g",
+                    "(D) (m₂ - m₁)g"
+                ],
+                answer: 3
+            },
+            {
+                text: "7. Find the acceleration of 3 kg mass when acceleration of 2 kg mass is 2 m/s² as shown in figure.",
+                options: [
+                    "(A) 3 m/s²",
+                    "(B) 2 m/s²",
+                    "(C) 0.5 m/s²",
+                    "(D) zero"
+                ],
+                answer: 1
+            },
+            {
+                text: "8. An elastic spring of relaxed length ℓ₀ and force constant k is cut into two parts of lengths ℓ₁ and ℓ₂. The force constants of these parts are respectively",
+                options: [
+                    "(A) kℓ₀/ℓ₁ and kℓ₀/ℓ₂",
+                    "(B) kℓ₁/ℓ₀ and kℓ₂/ℓ₀",
+                    "(C) kℓ₂/ℓ₀ and kℓ₁/ℓ₀",
+                    "(D) kℓ₀² and kℓ₀¹"
+                ],
+                answer: 0
+            },
+            {
+                text: "9. Block A is moving away from the wall at a speed v and acceleration a.",
+                options: [
+                    "(A) Velocity of B is v with respect to A",
+                    "(B) Acceleration of B is a with respect to A",
+                    "(C) Acceleration of B is 4a with respect to A",
+                    "(D) Acceleration of B is √17a with respect to A"
+                ],
+                answer: 3
+            },
+            {
+                text: "10. A block of mass 2 kg is kept on a rough horizontal floor and pulled with a force F. If the coefficient of friction is 0.5, then the minimum force required to move the block is :-",
+                options: [
+                    "(A) 10 N",
+                    "(B) 100/11 N",
+                    "(C) 100/8 N",
+                    "(D) 20 N"
+                ],
+                answer: 1
+            },
+            {
+                text: "11. Block B of mass 100 kg rests on a rough surface of friction coefficient μ = 1/3. A rope is tied to block B as shown in figure. The maximum acceleration with which boy A of 25 kg can climb on rope without making block move is :-",
+                options: [
+                    "(A) 4g/3",
+                    "(B) g/3",
+                    "(C) g/2",
+                    "(D) 3g/4"
+                ],
+                answer: 1
+            },
+            {
+                text: "12. In the figure shown if friction coefficient of block 1 kg and 2 kg with inclined plane is μ₁ = 0.5 and μ₂ = 0.4 respectively, then",
+                options: [
+                    "(A) both block will move together",
+                    "(B) both block will move separately",
+                    "(C) there is a non zero contact force between two blocks",
+                    "(D) none of these"
+                ],
+                answer: 1
+            },
+            {
+                text: "13. The system is pushed by a force F as shown in figure. All surfaces are smooth except between B and C. Friction coefficient between B and C is μ. Minimum value of F to prevent block B from downward slipping is :-",
+                options: [
+                    "(A) (2/3μ)mg",
+                    "(B) (2/5μ)mg",
+                    "(C) (5/2)μmg",
+                    "(D) (3/2)μmg"
+                ],
+                answer: 1
+            },
+            {
+                text: "14. In the figure shown, all surfaces are smooth and block A and wedge B have mass 10 kg and 20 kg respectively, and the system is in equilibrium. If normal reaction between block A & B, spring force and normal reaction of ground on block B are P, Q & R respectively (in N). Find the value of P + Q + R. (g = 10 m/s²)",
+                answer: "392",
+                type: "numeric"
+            },
+            {
+                text: "15. Force F is applied on upper pulley. If F = 30t N where t is time in second. Find the time when m₁ loses contact with floor (in sec).",
+                answer: "2",
+                type: "numeric"
+            },
+            {
+                text: "16. Two blocks of masses 2.0 kg and 3.0 kg are connected by light inextensible string. The string passes over an ideal pulley pivoted to a fixed axle on a smooth incline plane as shown in the figure. When the blocks are released, find magnitude of their accelerations (in m/s²).",
+                answer: "1",
+                type: "numeric"
+            },
+            {
+                text: "17. Block M slides down on frictionless incline as shown. Find the minimum friction coefficient so that m does not slide with respect to M.",
+                answer: "0.75",
+                type: "numeric"
+            },
+            {
+                text: "18. A 1 kg block B rests as shown on a bracket A of same mass. Constant forces F₁ = 20 N and F₂ = 8 N start to act at time t = 0 when the distance of block B from pulley is 50 cm. Time when block B reaches the pulley is (in sec).",
+                answer: "0.5",
+                type: "numeric"
+            },
+            {
+                text: "19. A block of mass 10 kg is kept on a rough inclined plane as shown in the figure. A force of 3 N is applied on the block. The coefficient of static friction between the plane and the block is 0.6. What should be the minimum value of force P, such that the block does not move downward? (take g = 10 ms⁻²)",
+                options: [
+                    "(A) 32 N",
+                    "(B) 18 N",
+                    "(C) 23 N",
+                    "(D) 25 N"
+                ],
+                answer: 0
+            },
+            {
+                text: "20. A particle of mass m is moving in a straight line with momentum p. Starting at time t = 0, a force F = kt acts in the same direction on the moving particle during time interval T so that its momentum changes from p to 3p. Here k is a constant. The value of T is:",
+                options: [
+                    "(A) 2√(p/k)",
+                    "(B) 2√(p/k)",
+                    "(C) √(2p/k)",
+                    "(D) √(2k/p)"
+                ],
+                answer: 1
+            },
+            {
+                text: "21. A ball is thrown upward with an initial velocity V₀ from the surface of the earth. The motion of the ball is affected by a drag force equal to mγv² (where m is mass of the ball, v is its instantaneous velocity and γ is a constant). Time taken by the ball to rise to its zenith is:",
+                options: [
+                    "(A) (1/√(γg)) tan⁻¹(√(γg/V₀))",
+                    "(B) √(γ/g) sin⁻¹(√(γg V₀))",
+                    "(C) (1/√(γg)) ln(1 + √(γg V₀))",
+                    "(D) √(2/γg) tan⁻¹(√(2γg V₀))"
+                ],
+                answer: 0
+            },
+            {
+                text: "22. Two blocks A and B masses m_A = 1 kg and m_B = 3 kg are kept on the table as shown in figure. The coefficient of friction between A and B is 0.2 and between B and the surface of the table is also 0.2. The maximum force F that can be applied on B horizontally, so that the block A does not slide over the block B is: [Take g = 10 m/s²]",
+                options: [
+                    "(A) 8 N",
+                    "(B) 16 N",
+                    "(C) 40 N",
+                    "(D) 12 N"
+                ],
+                answer: 0
+            },
+            {
+                text: "23. A small ball of mass m is thrown upward with velocity u from the ground. The ball experiences a resistive force mk v², where v is its speed. The maximum height attained by the ball is",
+                options: [
+                    "(A) (1/2k) tan⁻¹(√(k g/u²))",
+                    "(B) (1/k) ln(1 + √(k²u g²))",
+                    "(C) (1/2k) ln(1 + √(k g/u²))",
+                    "(D) (1/k) tan⁻¹(√(k²u/g²))"
+                ],
+                answer: 2
+            },
+            {
+                text: "24. A system of 10 balls each of mass 2 kg are connected via massless and unstretchable string. The system is allowed to slip over the edge of a smooth table as shown in figure. Tension on the string between the 7th and 8th ball is ___N when 6th ball just leaves the table.",
+                answer: "36",
+                type: "numeric"
+            },
+            {
+                text: "25. Given below are two statements:<br>Statement-I: An elevator can go up or down with uniform speed when its weight is balanced with the tension of its cable.<br>Statement-II: Force exerted by the floor of an elevator on the foot of a person standing on it is more than his/her weight when the elevator goes down with increasing speed.<br>In the light of the above statements, choose the correct answer from the options given below:",
+                options: [
+                    "(A) Both statement I and statement II are false",
+                    "(B) Statement I is true but Statement II is false",
+                    "(C) Both Statement I and Statement II are true",
+                    "(D) Statement I is false but Statement II is true"
+                ],
+                answer: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let answers = new Array(questions.length).fill(-1);
+        let timeLeft = 45 * 60;
+        let timerInterval;
+        let testSubmitted = false;
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                document.getElementById('timeLeft').textContent = 
+                    `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    submitTest();
+                }
+            }, 1000);
+        }
+
+        function loadQuestion(index) {
+            const q = questions[index];
+            const container = document.getElementById('questionContainer');
+            
+            let html = `
+                <div class="question">
+                    <div class="q-number">Q${index + 1}</div>
+                    <div class="q-text">${q.text}</div>
+            `;
+            
+            if (q.diagram) {
+                html += `<div class="diagram">${q.diagram}</div>`;
+            }
+            
+            if (q.type === 'numeric') {
+                html += `
+                    <input type="number" id="numAnswer${index}" style="width:200px; padding:15px; font-size:18px; border:2px solid #ddd; border-radius:10px; margin-top:20px;" placeholder="Enter numeric answer">
+                `;
+            } else {
+                html += '<div class="options">';
+                q.options.forEach((option, i) => {
+                    const selected = answers[index] === i ? 'selected' : '';
+                    html += `<div class="option ${selected}" onclick="selectOption(${index}, ${i})">${option}</div>`;
+                });
+                html += '</div>';
+            }
+            
+            html += '</div>';
+            container.innerHTML = html;
+            
+            // Load saved numeric answer
+            if (q.type === 'numeric' && answers[index] !== -1) {
+                document.getElementById(`numAnswer${index}`).value = answers[index];
+            }
+            
+            updateNavigation();
+            updateProgress();
+        }
+
+        function selectOption(qIndex, optionIndex) {
+            answers[qIndex] = optionIndex;
+            loadQuestion(currentQuestion); // Reload to update UI
+        }
+
+        function changeQuestion(direction) {
+            const newIndex = currentQuestion + direction;
+            if (newIndex >= 0 && newIndex < questions.length) {
+                currentQuestion = newIndex;
+                loadQuestion(currentQuestion);
+            }
+        }
+
+        function updateNavigation() {
+            document.getElementById('prevBtn').disabled = currentQuestion === 0;
+            document.getElementById('nextBtn').disabled = currentQuestion === questions.length - 1;
+        }
+
+        function updateProgress() {
+            document.getElementById('currentQ').textContent = currentQuestion + 1;
+        }
+
+        function showSubmitModal() {
+            document.getElementById('submitModal').style.display = 'block';
+            calculateScore();
+        }
+
+        function submitTest() {
+            testSubmitted = true;
+            clearInterval(timerInterval);
+            showSubmitModal();
+        }
+
+        function calculateScore() {
+            let score = 0;
+            questions.forEach((q, i) => {
+                if (q.type === 'numeric') {
+                    const userAns = parseFloat(answers[i]);
+                    const correctAns = parseFloat(q.answer);
+                    if (!isNaN(userAns) && Math.abs(userAns - correctAns) < 0.1) {
+                        score++;
+                    }
+                } else if (answers[i] === q.answer) {
+                    score++;
+                }
+            });
+            
+            document.getElementById('finalScore').textContent = `${score}/${questions.length}`;
+            const percentage = Math.round((score / questions.length) * 100);
+            document.getElementById('scoreMessage').textContent = 
+                percentage >= 80 ? '🎉 Excellent!' : 
+                percentage >= 60 ? '👍 Good!' : 
+                percentage >= 40 ? '📚 Keep Practicing!' : '💪 Try Again!';
+        }
+
+        function restartTest() {
+            document.getElementById('submitModal').style.display = 'none';
+            currentQuestion = 0;
+            answers = new Array(questions.length).fill(-1);
+            timeLeft = 45 * 60;
+            testSubmitted = false;
+            startTimer();
+            loadQuestion(0);
+        }
+
+        function showAnswers() {
+            document.getElementById('submitModal').style.display = 'none';
+            answers = questions.map(q => q.answer);
+            currentQuestion = 0;
+            loadQuestion(0);
+        }
+
+        // Initialize
+        window.onload = () => {
+            loadQuestion(0);
+            startTimer();
+            
+            // Prevent right click and shortcuts
+            document.addEventListener('contextmenu', e => e.preventDefault());
+            document.onkeydown = (e) => {
+                if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'p')) {
+                    e.preventDefault();
+                }
+            };
+        };
+    </script>
+</body>
+</html>
