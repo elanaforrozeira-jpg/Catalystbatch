@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>🚀 JEE Aspirant की कहानी - तू कर लेगा भाई! 🔥</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap');
+        body {
+            font-family: 'Noto Sans Devanagari', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            min-height: 100vh;
+            animation: fadeIn 2s ease-in;
+            overflow-x: hidden;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        .story-step {
+            background: rgba(255,255,255,0.2);
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #ff6b6b;
+            animation: slideIn 1s ease-out forwards;
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        .story-step:nth-child(1) { animation-delay: 0.2s; }
+        .story-step:nth-child(2) { animation-delay: 0.5s; }
+        .story-step:nth-child(3) { animation-delay: 0.8s; }
+        .story-step:nth-child(4) { animation-delay: 1.1s; }
+        .story-step:nth-child(5) { animation-delay: 1.4s; }
+        @keyframes slideIn {
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .motivation {
+            font-size: 1.3em;
+            text-align: center;
+            margin: 30px 0;
+            color: #ffd700;
+            font-weight: bold;
+        }
+        .rose-gift {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 4em;
+            animation: heartbeat 1.5s infinite;
+            cursor: pointer;
+            user-select: none;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .final-message {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: #000;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(255,107,107,0.4);
+            animation: bounceIn 2s ease-out;
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        button {
+            background: #ff4757;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+        .iit-logo {
+            font-size: 3em;
+            margin: 20px 0;
+        }
+
+        /* Confetti */
+        #confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            overflow: visible;
+            z-index: 9999;
+            display: none;
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ffd700;
+            border-radius: 50%;
+            animation-name: confetti-fall;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes confetti-fall {
+            0% {transform: translateY(-10vh) rotate(0deg); opacity: 1;}
+            100% {transform: translateY(110vh) rotate(360deg); opacity: 0;}
+        }
+
+        /* Emoji animation upwards */
+        #emoji-celebration {
+            position: fixed;
+            top: 10vh;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3em;
+            pointer-events: none;
+            z-index: 10000;
+            display: none;
+        }
+        .emoji {
+            position: absolute;
+            animation: emojiUp 2s forwards;
+        }
+        @keyframes emojiUp {
+            0% {opacity: 1; transform: translateY(0) scale(1);}
+            100% {opacity: 0; transform: translateY(-200px) scale(1.5);}
+        }
+
+        /* Quiz modal */
+        #quizModal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 11000;
+        }
+        #quizModal > div {
+            background: #764ba2;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 400px;
+            text-align: center;
+        }
+        #quizModal button {
+            margin: 10px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        #quizModal button.close-btn {
+            background: #ff4757;
+            color: white;
+            margin-top: 15px;
+        }
+
+        /* Daily tip style */
+        .day-tip {
+            margin-top: 20px;
+            font-size: 1.15em;
+            text-align: center;
+            color: #ffd700;
+            font-style: italic;
+            user-select: none;
+        }
+        /* Theme switch button */
+        #themeBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ff6b6b;
+            padding: 10px 15px;
+            font-size: 1em;
+            z-index: 10500;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 JEE Aspirant की सच्ची कहानी 🌟</h1>
+        <p class="subtitle">एक लड़के की जर्नी जो रातों की नींद छोड़कर IIT पहुँचा...</p>
+
+        <div class="story-step">
+            <h2>📚 Chapter 1: शुरुआत</h2>
+            <p>11वीं में आया, Physics के formulas देखकर सिर चकराने लगा। सबको लग रहा था "ये JEE नहीं कर पाएगा"। लेकिन उसने कहा - <strong>"बस थोड़ा और"</strong></p>
+        </div>
+
+        <div class="story-step">
+            <h2>💪 Chapter 2: मेहनत का दौर</h2>
+            <p>रोज़ 12 घंटे पढ़ाई। Mock tests में 100/300 आते थे। दोस्त party करते, वो table पर सो जाता। फिर भी हार नहीं माना।</p>
+        </div>
+
+        <div class="story-step">
+            <h2>😭 Chapter 3: सबसे काला दिन</h2>
+            <p>January Main में 85 percentile। सबने कहा "छोड़ दो Engineering"। लेकिन उसकी माँ ने कहा - "<strong>बेटा, बस थोड़ा और"</strong></p>
+        </div>
+
+        <div class="story-step">
+            <h2>🔥 Chapter 4: कमबैक</h2>
+            <p>3 महीने PYQs, formula sheets, short notes। April Main में 99.8 percentile! Advanced में AIR 1567।</p>
+        </div>
+
+        <div class="story-step">
+            <h2>🎓 Chapter 5: जीत</h2>
+            <p>आज IIT Bombay CSE में 1st semester। वो रोज़ सोचता है - "<em>अगर मैं कर गया तो तू भी कर लेगा!</em>"</p>
+        </div>
+
+        <div class="motivation">
+            💥 अभी जो दर्द हो रहा है, वही कल तेरी सबसे बड़ी ताकत बनेगा! 💥
+        </div>
+
+        <div class="rose-gift" onclick="showGift()">🌹</div>
+        <p style="text-align: center; font-size: 1.2em;">Click करो Rose पर - तेरे लिए Gift है! 🎁</p>
+
+        <div id="giftBox" style="display: none;">
+            <div class="final-message">
+                <div class="iit-logo">🏆 IIT BOM BAY 🏆</div>
+                <strong>तू कर लेगा यार! बस थोड़ी और मेहनत!<br>
+                IIT की सीट तेरे हाथ में आ जाएगी! 💪🔥<br><br>
+                🌹 ये Rose तेरे लिए - Keep Going! 🌹</strong><br><br>
+                <button onclick="restartStory()">दूसरी बार देखना चाहो?</button>
+                <button onclick="shareMotivation()">Friends को भेजो!</button>
+            </div>
+            <div class="day-tip" id="dailyTip">📌 आज का टिप: "रात के अंधेरे के बाद ही सूरज की किरणें चमकती हैं।"</div>
+        </div>
+    </div>
+
+    <!-- Confetti container -->
+    <div id="confetti-container"></div>
+
+    <!-- Emoji celebration container -->
+    <div id="emoji-celebration"></div>
+
+    <!-- Quiz modal -->
+    <div id="quizModal">
+        <div>
+            <h2>🎓 Quick Quiz!</h2>
+            <p>JEE के लिए Physics में महत्वपूर्ण quantity है?</p>
+            <button onclick="answerQuiz(true)">Momentum</button>
+            <button onclick="answerQuiz(false)">Velocity</button>
+            <button onclick="closeQuiz()" class="close-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- Motivation Audio -->
+    <audio id="motivationAudio" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg" preload="auto"></audio>
+
+    <!-- Theme Change Button -->
+    <button id="themeBtn" title="Change Background Color">रंग बदलो 🌈</button>
+
+    <script>
+        const tips = [
+            "रात के अंधेरे के बाद ही सूरज की किरणें चमकती हैं।",
+            "हर बड़ी सफलता के पीछे एक असफलता छुपी होती है।",
+            "धैर्य रखो, मेहनत रंग लाएगी।",
+            "हर दिन एक नई शुरुआत है।",
+            "अपने सपनों पर भरोसा रखो, वे सच होंगे।"
+        ];
+
+        function createConfetti() {
+            const container = document.getElementById('confetti-container');
+            container.style.display = 'block';
+            for(let i=0; i<80; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = (Math.random() * window.innerWidth) + 'px';
+                confetti.style.animationDuration = ((Math.random() * 3) + 2) + 's';
+                confetti.style.animationDelay = (Math.random() * 3) + 's';
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+                container.appendChild(confetti);
+            }
+            setTimeout(() => {
+                container.innerHTML = '';
+                container.style.display = 'none';
+            }, 6000);
+        }
+
+        function emojiCelebrate() {
+            const emojiContainer = document.getElementById('emoji-celebration');
+            emojiContainer.style.display = 'block';
+            const emojis = ['🎉','🚀','💥','🔥','🏆','🌟'];
+            for(let i=0; i<10; i++) {
+                const span = document.createElement('span');
+                span.classList.add('emoji');
+                span.style.left = (Math.random()*80 + 10) + 'vw';
+                span.style.fontSize = (Math.random()*24 +24) + 'px';
+                span.style.animationDelay = (i*0.2) + 's';
+                span.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+                emojiContainer.appendChild(span);
+                setTimeout(() => {
+                    span.remove();
+                    if(i===9) emojiContainer.style.display = 'none';
+                }, 2200 + i*200);
+            }
+        }
+
+        function changeDailyTip() {
+            const tip = tips[Math.floor(Math.random()*tips.length)];
+            document.getElementById('dailyTip').innerText = `📌 आज का टिप: "${tip}"`;
+        }
+
+        function showGift() {
+            document.getElementById('giftBox').style.display = 'block';
+            document.querySelector('.rose-gift').style.display = 'none';
+            createConfetti();
+            changeDailyTip();
+            emojiCelebrate();
+            playAudio();
+            setTimeout(showQuiz, 3500);  // quiz popup after 3.5 seconds
+        }
+
+        function restartStory() {
+            location.reload();
+        }
+
+        function shareMotivation() {
+            if(navigator.share){
+                navigator.share({
+                    title: 'JEE Aspirant Motivation Story',
+                    text: 'तू कर लेगा भाई! बस थोड़ी और मेहनत! 🔥',
+                    url: window.location.href
+                });
+            } else {
+                alert('Link copy हो गया! Friends को भेज दो 🚀');
+                navigator.clipboard.writeText(window.location.href);
+            }
+        }
+
+        // Quiz modal controls
+        function showQuiz() {
+            document.getElementById('quizModal').style.display = 'flex';
+        }
+        function closeQuiz() {
+            document.getElementById('quizModal').style.display = 'none';
+        }
+        function answerQuiz(isCorrect) {
+            if(isCorrect){
+                alert('बहुत बढ़िया! मेहनत करते रहो! 🔥');
+            } else {
+                alert('कोशिश जारी रखो, अगली बार ज़रूर सही होगा! 💪');
+            }
+            closeQuiz();
+        }
+
+        // Audio play function
+        function playAudio() {
+            const aud = document.getElementById('motivationAudio');
+            aud.currentTime = 0;
+            aud.play();
+        }
+
+        // Theme changer toggle between 3 gradients
+        const themes = [
+            "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+            "linear-gradient(135deg, #ff6b6b 0%, #feca57 100%)",
+            "linear-gradient(135deg, #43cea2 0%, #185a9d 100%)"
+        ];
+        let themeIndex = 0;
+        document.getElementById('themeBtn').addEventListener('click', () => {
+            themeIndex = (themeIndex + 1) % themes.length;
+            document.body.style.background = themes[themeIndex];
+        });
+    </script>
+</body>
+</html>
