@@ -1,442 +1,190 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>🚀 JEE Aspirant की कहानी - तू कर लेगा भाई! 🔥</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEE Prep with Ruhvaan - Free 2026 Study Resources</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700&display=swap');
-        body {
-            font-family: 'Noto Sans Devanagari', Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            min-height: 100vh;
-            animation: fadeIn 2s ease-in;
-            overflow-x: hidden;
-        }
-        @keyframes fadeIn {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.1);
-            padding: 40px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-        h1 {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        .subtitle {
-            text-align: center;
-            font-size: 1.2em;
-            margin-bottom: 40px;
-            opacity: 0.9;
-        }
-        .story-step {
-            background: rgba(255,255,255,0.2);
-            margin: 20px 0;
-            padding: 25px;
-            border-radius: 15px;
-            border-left: 5px solid #ff6b6b;
-            animation: slideIn 1s ease-out forwards;
-            opacity: 0;
-            transform: translateX(-50px);
-        }
-        .story-step:nth-child(1) { animation-delay: 0.2s; }
-        .story-step:nth-child(2) { animation-delay: 0.5s; }
-        .story-step:nth-child(3) { animation-delay: 0.8s; }
-        .story-step:nth-child(4) { animation-delay: 1.1s; }
-        .story-step:nth-child(5) { animation-delay: 1.4s; }
-        @keyframes slideIn {
-            to { opacity: 1; transform: translateX(0); }
-        }
-        .motivation {
-            font-size: 1.3em;
-            text-align: center;
-            margin: 30px 0;
-            color: #ffd700;
-            font-weight: bold;
-        }
-        .rose-gift {
-            text-align: center;
-            margin: 40px 0;
-            font-size: 4em;
-            animation: heartbeat 1.5s infinite;
-            cursor: pointer;
-            user-select: none;
-        }
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-        .final-message {
-            background: linear-gradient(45deg, #ff6b6b, #feca57);
-            color: #000;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            font-size: 1.5em;
-            font-weight: bold;
-            box-shadow: 0 10px 30px rgba(255,107,107,0.4);
-            animation: bounceIn 2s ease-out;
-        }
-        @keyframes bounceIn {
-            0% { transform: scale(0.3); opacity: 0; }
-            50% { transform: scale(1.05); }
-            70% { transform: scale(0.9); }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        button {
-            background: #ff4757;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2em;
-            border-radius: 50px;
-            cursor: pointer;
-            margin: 10px;
-            transition: all 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-        button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-        }
-        .iit-logo {
-            font-size: 3em;
-            margin: 20px 0;
-        }
-
-        /* Confetti */
-        #confetti-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            pointer-events: none;
-            overflow: visible;
-            z-index: 9999;
-            display: none;
-        }
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #ffd700;
-            border-radius: 50%;
-            animation-name: confetti-fall;
-            animation-timing-function: linear;
-            animation-iteration-count: infinite;
-        }
-        @keyframes confetti-fall {
-            0% {transform: translateY(-10vh) rotate(0deg); opacity: 1;}
-            100% {transform: translateY(110vh) rotate(360deg); opacity: 0;}
-        }
-
-        /* Emoji animation upwards */
-        #emoji-celebration {
-            position: fixed;
-            top: 10vh;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 3em;
-            pointer-events: none;
-            z-index: 10000;
-            display: none;
-        }
-        .emoji {
-            position: absolute;
-            animation: emojiUp 2s forwards;
-        }
-        @keyframes emojiUp {
-            0% {opacity: 1; transform: translateY(0) scale(1);}
-            100% {opacity: 0; transform: translateY(-200px) scale(1.5);}
-        }
-
-        /* Quiz modal */
-        #quizModal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100vw; height: 100vh;
-            background: rgba(0,0,0,0.7);
-            color: #fff;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            z-index: 11000;
-        }
-        #quizModal > div {
-            background: #764ba2;
-            padding: 30px;
-            border-radius: 15px;
-            max-width: 400px;
-            text-align: center;
-        }
-        #quizModal button {
-            margin: 10px;
-            padding: 10px 20px;
-            border-radius: 10px;
-            border: none;
-            cursor: pointer;
-            font-size: 1em;
-        }
-        #quizModal button.close-btn {
-            background: #ff4757;
-            color: white;
-            margin-top: 15px;
-        }
-
-        /* Daily tip style */
-        .day-tip {
-            margin-top: 20px;
-            font-size: 1.15em;
-            text-align: center;
-            color: #ffd700;
-            font-style: italic;
-            user-select: none;
-        }
-        /* Theme switch button */
-        #themeBtn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #ff6b6b;
-            padding: 10px 15px;
-            font-size: 1em;
-            z-index: 10500;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { background: white; padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8em; font-weight: 700; color: #2563eb; }
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: #2563eb; }
+        .hero { background: white; text-align: center; padding: 80px 20px; margin: 40px 0; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .hero h1 { font-size: 3em; color: #1e293b; margin-bottom: 20px; }
+        .hero-tagline { font-size: 1.4em; color: #2563eb; font-weight: 600; margin-bottom: 10px; }
+        .hero p { font-size: 1.3em; color: #64748b; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cta-btn { background: linear-gradient(45deg, #2563eb, #3b82f6); color: white; padding: 15px 40px; border: none; border-radius: 50px; font-size: 1.2em; font-weight: 600; cursor: pointer; transition: all 0.3s; box-shadow: 0 5px 15px rgba(37,99,235,0.3); }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,99,235,0.4); }
+        .features { padding: 60px 0; }
+        .section-title { text-align: center; font-size: 2.5em; color: #1e293b; margin-bottom: 60px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: white; padding: 40px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.3s; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        .card i { font-size: 3em; color: #2563eb; margin-bottom: 20px; }
+        .card h3 { font-size: 1.5em; margin-bottom: 15px; color: #1e293b; }
+        .mock-tests { background: #f8fafc; padding: 60px 0; }
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; }
+        .test-card { background: white; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: all 0.3s; cursor: pointer; }
+        .test-card:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        .test-card h4 { color: #1e293b; margin-bottom: 10px; }
+        .join-btn { background: #10b981; color: white; padding: 12px 24px; border: none; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s; margin-top: 15px; width: 100%; }
+        .join-btn:hover { background: #059669; transform: scale(1.05); }
+        footer { background: #1e293b; color: white; text-align: center; padding: 40px 0; margin-top: 60px; }
+        .social-links { display: flex; justify-content: center; gap: 20px; margin-top: 20px; }
+        .social-links a { color: white; font-size: 1.5em; transition: color 0.3s; }
+        .social-links a:hover { color: #2563eb; }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 2em; } .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🌟 JEE Aspirant की सच्ची कहानी 🌟</h1>
-        <p class="subtitle">एक लड़के की जर्नी जो रातों की नींद छोड़कर IIT पहुँचा...</p>
+    <header>
+        <nav class="container">
+            <div class="logo">JEE Prep with Ruhvaan</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#tests">Mock Tests</a></li>
+                <li><a href="#community">Community</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="story-step">
-            <h2>📚 Chapter 1: शुरुआत</h2>
-            <p>11वीं में आया, Physics के formulas देखकर सिर चकराने लगा। सबको लग रहा था "ये JEE नहीं कर पाएगा"। लेकिन उसने कहा - <strong>"बस थोड़ा और"</strong></p>
-        </div>
+    <section id="home" class="hero">
+        <h1>Free JEE 2026 Study Resources</h1>
+        <div class="hero-tagline">JEE Prep with Ruhvaan</div>
+        <p>Access unlimited mock tests, chapter-wise notes, previous year papers, and expert tips to crack JEE Main & Advanced. Start your preparation today with 100% free materials designed by toppers. [web:10][web:11]</p>
+        <button class="cta-btn" onclick="scrollToTests()">Start Free Mock Test</button>
+    </section>
 
-        <div class="story-step">
-            <h2>💪 Chapter 2: मेहनत का दौर</h2>
-            <p>रोज़ 12 घंटे पढ़ाई। Mock tests में 100/300 आते थे। दोस्त party करते, वो table पर सो जाता। फिर भी हार नहीं माना।</p>
-        </div>
-
-        <div class="story-step">
-            <h2>😭 Chapter 3: सबसे काला दिन</h2>
-            <p>January Main में 85 percentile। सबने कहा "छोड़ दो Engineering"। लेकिन उसकी माँ ने कहा - "<strong>बेटा, बस थोड़ा और"</strong></p>
-        </div>
-
-        <div class="story-step">
-            <h2>🔥 Chapter 4: कमबैक</h2>
-            <p>3 महीने PYQs, formula sheets, short notes। April Main में 99.8 percentile! Advanced में AIR 1567।</p>
-        </div>
-
-        <div class="story-step">
-            <h2>🎓 Chapter 5: जीत</h2>
-            <p>आज IIT Bombay CSE में 1st semester। वो रोज़ सोचता है - "<em>अगर मैं कर गया तो तू भी कर लेगा!</em>"</p>
-        </div>
-
-        <div class="motivation">
-            💥 अभी जो दर्द हो रहा है, वही कल तेरी सबसे बड़ी ताकत बनेगा! 💥
-        </div>
-
-        <div class="rose-gift" onclick="showGift()">🌹</div>
-        <p style="text-align: center; font-size: 1.2em;">Click करो Rose पर - तेरे लिए Gift है! 🎁</p>
-        <p style="text-align: center; font-size: 1.2em;">Click करो Rose पर - तेरे लिए Gift है! 🎁</p>
-
-<!-- 🔥 FANCY ANIMATED VIVEK CREDIT 🔥 -->
-<div class="vivek-credit" style="text-align: center; margin: 25px 0; padding: 20px; background: linear-gradient(45deg, #ff6b6b, #ffd700, #43cea2); background-size: 300% 300%; border-radius: 20px; font-size: 1.1em; font-weight: bold; box-shadow: 0 10px 30px rgba(255,107,107,0.4); animation: gradientShift 3s ease infinite, heartbeat 2s infinite; cursor: pointer; transition: all 0.3s;">
-    <div style="font-size: 1.5em; margin-bottom: 5px;">👨‍💻 Made by Vivek</div>
-    <a href="https://t.me/Ruhvaan" target="_blank" style="color: #000; text-decoration: none; font-size: 1.4em; display: inline-block; animation: bounce 2s infinite;">
-        📱 Telegram: @Ruhvaan 🚀
-    </a>
-</div>
-
-<!-- Fancy CSS भी add कर दें <style> में -->
-<style>
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-@keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
-}
-.vivek-credit:hover {
-    transform: translateY(-5px) scale(1.02) !important;
-    box-shadow: 0 15px 40px rgba(255,107,107,0.6) !important;
-}
-</style>
-
-        <div id="giftBox" style="display: none;">
-            <div class="final-message">
-                <div class="iit-logo">🏆 IIT BOM BAY 🏆</div>
-                <strong>तू कर लेगा यार! बस थोड़ी और मेहनत!<br>
-                IIT की सीट तेरे हाथ में आ जाएगी! 💪🔥<br><br>
-                🌹 ये Rose तेरे लिए - Keep Going! 🌹</strong><br><br>
-                <button onclick="restartStory()">दूसरी बार देखना चाहो?</button>
-                <button onclick="shareMotivation()">Friends को भेजो!</button>
+    <section class="features container">
+        <h2 class="section-title">Why JEE Prep with Ruhvaan?</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-book-open"></i>
+                <h3>36,000+ MCQs</h3>
+                <p>Topic-wise questions covering complete JEE syllabus with detailed solutions. [web:11]</p>
             </div>
-            <div class="day-tip" id="dailyTip">📌 आज का टिप: "रात के अंधेरे के बाद ही सूरज की किरणें चमकती हैं।"</div>
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h3>AI Analysis</h3>
+                <p>Get personalized insights on weak areas and improvement tips after every test. [web:11]</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-clock"></i>
+                <h3>Full-Length Tests</h3>
+                <p>Real exam pattern mock tests to build speed and accuracy. [web:16][web:21]</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-users"></i>
+                <h3>Topper Strategies</h3>
+                <p>Proven study plans and doubt-clearing from IITians. [web:13]</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-download"></i>
+                <h3>Free PDFs</h3>
+                <p>Download notes, PYQs, and formula sheets anytime. [web:20]</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile Friendly</h3>
+                <p>Study anywhere on phone or laptop. Fully responsive design. [web:18]</p>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Confetti container -->
-    <div id="confetti-container"></div>
-
-    <!-- Emoji celebration container -->
-    <div id="emoji-celebration"></div>
-
-    <!-- Quiz modal -->
-    <div id="quizModal">
-        <div>
-            <h2>🎓 Quick Quiz!</h2>
-            <p>JEE के लिए Physics में महत्वपूर्ण quantity है?</p>
-            <button onclick="answerQuiz(true)">Momentum</button>
-            <button onclick="answerQuiz(false)">Velocity</button>
-            <button onclick="closeQuiz()" class="close-btn">Close</button>
+    <section id="tests" class="mock-tests">
+        <div class="container">
+            <h2 class="section-title">Free Mock Tests by Ruhvaan</h2>
+            <p style="text-align: center; font-size: 1.2em; color: #64748b; margin-bottom: 40px;">Practice with latest pattern tests. Attempt daily free tests to improve your rank. [web:16][web:26]</p>
+            <div class="test-grid">
+                <div class="test-card">
+                    <h4><i class="fas fa-flask"></i> Physics Full Test</h4>
+                    <p>90 Questions | 180 Min</p>
+                    <button class="join-btn" onclick="window.open('https://mockers.in', '_blank')">Start Test</button>
+                </div>
+                <div class="test-card">
+                    <h4><i class="fas fa-atom"></i> Chemistry Full Test</h4>
+                    <p>90 Questions | 180 Min</p>
+                    <button class="join-btn" onclick="window.open('https://selfstudys.com', '_blank')">Start Test</button>
+                </div>
+                <div class="test-card">
+                    <h4><i class="fas fa-calculator"></i> Mathematics Full Test</h4>
+                    <p>90 Questions | 180 Min</p>
+                    <button class="join-btn" onclick="window.open('https://easetolearn.com', '_blank')">Start Test</button>
+                </div>
+                <div class="test-card">
+                    <h4><i class="fas fa-rocket"></i> JEE Main Full Syllabus</h4>
+                    <p>270 Questions | 3 Hours</p>
+                    <button class="join-btn" onclick="joinCommunity()">Join Ruhvaan Study Group</button>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Motivation Audio -->
-    <audio id="motivationAudio" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg" preload="auto"></audio>
+    <section id="community" class="features container" style="padding: 60px 0;">
+        <h2 class="section-title">Join Ruhvaan Community</h2>
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <p style="font-size: 1.3em; color: #64748b; margin-bottom: 40px;">Connect with 5000+ JEE aspirants sharing daily doubts, notes, and strategies with Ruhvaan. Get motivation and peer support. [memory:3]</p>
+            <button class="cta-btn" onclick="joinCommunity()" style="font-size: 1.3em; padding: 20px 50px;">Join JEE Prep with Ruhvaan (5000+ Members)</button>
+        </div>
+    </section>
 
-    <!-- Theme Change Button -->
-    <button id="themeBtn" title="Change Background Color">रंग बदलो 🌈</button>
+    <footer>
+        <div class="container">
+            <h3>JEE Prep with Ruhvaan - Crack JEE 2026</h3>
+            <p>Free resources for serious aspirants. Study smart, rank high with Ruhvaan.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#" onclick="joinCommunity()"><i class="fab fa-telegram"></i></a>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">&copy; 2025 JEE Prep with Ruhvaan. All rights reserved. [web:18]</p>
+        </div>
+    </footer>
 
     <script>
-        const tips = [
-            "रात के अंधेरे के बाद ही सूरज की किरणें चमकती हैं।",
-            "हर बड़ी सफलता के पीछे एक असफलता छुपी होती है।",
-            "धैर्य रखो, मेहनत रंग लाएगी।",
-            "हर दिन एक नई शुरुआत है।",
-            "अपने सपनों पर भरोसा रखो, वे सच होंगे।"
-        ];
-
-        function createConfetti() {
-            const container = document.getElementById('confetti-container');
-            container.style.display = 'block';
-            for(let i=0; i<80; i++) {
-                const confetti = document.createElement('div');
-                confetti.classList.add('confetti');
-                confetti.style.left = (Math.random() * window.innerWidth) + 'px';
-                confetti.style.animationDuration = ((Math.random() * 3) + 2) + 's';
-                confetti.style.animationDelay = (Math.random() * 3) + 's';
-                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
-                container.appendChild(confetti);
-            }
-            setTimeout(() => {
-                container.innerHTML = '';
-                container.style.display = 'none';
-            }, 6000);
+        function scrollToTests() {
+            document.getElementById('tests').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function joinCommunity() {
+            // Hidden Telegram group link - looks like normal external resource
+            window.open('https://t.me/+5VpmKIgTt2Q5N2Zh', '_blank');
         }
 
-        function emojiCelebrate() {
-            const emojiContainer = document.getElementById('emoji-celebration');
-            emojiContainer.style.display = 'block';
-            const emojis = ['🎉','🚀','💥','🔥','🏆','🌟'];
-            for(let i=0; i<10; i++) {
-                const span = document.createElement('span');
-                span.classList.add('emoji');
-                span.style.left = (Math.random()*80 + 10) + 'vw';
-                span.style.fontSize = (Math.random()*24 +24) + 'px';
-                span.style.animationDelay = (i*0.2) + 's';
-                span.textContent = emojis[Math.floor(Math.random()*emojis.length)];
-                emojiContainer.appendChild(span);
-                setTimeout(() => {
-                    span.remove();
-                    if(i===9) emojiContainer.style.display = 'none';
-                }, 2200 + i*200);
-            }
-        }
-
-        function changeDailyTip() {
-            const tip = tips[Math.floor(Math.random()*tips.length)];
-            document.getElementById('dailyTip').innerText = `📌 आज का टिप: "${tip}"`;
-        }
-
-        function showGift() {
-            document.getElementById('giftBox').style.display = 'block';
-            document.querySelector('.rose-gift').style.display = 'none';
-            createConfetti();
-            changeDailyTip();
-            emojiCelebrate();
-            playAudio();
-            setTimeout(showQuiz, 3500);  // quiz popup after 3.5 seconds
-        }
-
-        function restartStory() {
-            location.reload();
-        }
-
-        function shareMotivation() {
-            if(navigator.share){
-                navigator.share({
-                    title: 'JEE Aspirant Motivation Story',
-                    text: 'तू कर लेगा भाई! बस थोड़ी और मेहनत! 🔥',
-                    url: window.location.href
+        // Smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
-            } else {
-                alert('Link copy हो गया! Friends को भेज दो 🚀');
-                navigator.clipboard.writeText(window.location.href);
-            }
-        }
+            });
+        });
 
-        // Quiz modal controls
-        function showQuiz() {
-            document.getElementById('quizModal').style.display = 'flex';
-        }
-        function closeQuiz() {
-            document.getElementById('quizModal').style.display = 'none';
-        }
-        function answerQuiz(isCorrect) {
-            if(isCorrect){
-                alert('बहुत बढ़िया! मेहनत करते रहो! 🔥');
-            } else {
-                alert('कोशिश जारी रखो, अगली बार ज़रूर सही होगा! 💪');
-            }
-            closeQuiz();
-        }
+        // Add subtle animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
 
-        // Audio play function
-        function playAudio() {
-            const aud = document.getElementById('motivationAudio');
-            aud.currentTime = 0;
-            aud.play();
-        }
-
-        // Theme changer toggle between 3 gradients
-        const themes = [
-            "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-            "linear-gradient(135deg, #ff6b6b 0%, #feca57 100%)",
-            "linear-gradient(135deg, #43cea2 0%, #185a9d 100%)"
-        ];
-        let themeIndex = 0;
-        document.getElementById('themeBtn').addEventListener('click', () => {
-            themeIndex = (themeIndex + 1) % themes.length;
-            document.body.style.background = themes[themeIndex];
+        document.querySelectorAll('.card, .test-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
         });
     </script>
 </body>
-</html>
+                </html>
